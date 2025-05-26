@@ -7,6 +7,8 @@ RM555997 - Caio Marques
 
 --Tecnologias Utilizadas
 
+LINK TINKERCAD: https://www.tinkercad.com/things/iyV2wHXrPS4/editel?sharecode=H4G81FURtnBcGJ910LN6aG40tuQJstCI72vHQZuynd8
+
 -Hardware & IoT:
 Sensor ultrassônico HC-SR04 com Arduino UNO (simulação no Tinkercad) e ESP8266/NodeMCU para envio de dados via HTTP POST.
 LEDs indicadores (verde/vermelho) para sinalização de vaga livre/ocupada.
