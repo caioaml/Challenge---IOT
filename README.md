@@ -1,37 +1,59 @@
-# Challenge---IOT
-RM558640 - Caio Amarante
+# Challenge IoT
 
-RM556325 - Felipe Camargo
+**RM558640** – Caio Amarante  
+**RM556325** – Felipe Camargo  
+**RM555997** – Caio Marques
 
-RM555997 - Caio Marques
+---
 
---Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-LINK TINKERCAD: https://www.tinkercad.com/things/iyV2wHXrPS4/editel?sharecode=H4G81FURtnBcGJ910LN6aG40tuQJstCI72vHQZuynd8
+- **Hardware & IoT**  
+  - Sensor ultrassônico HC-SR04 com Arduino UNO (simulação no Tinkercad)  
+  - ESP8266/NodeMCU para envio de dados via HTTP POST  
+  - LEDs indicadores (verde/vermelho) para sinalização de vaga livre/ocupada
 
--Hardware & IoT:
-Sensor ultrassônico HC-SR04 com Arduino UNO (simulação no Tinkercad) e ESP8266/NodeMCU para envio de dados via HTTP POST.
-LEDs indicadores (verde/vermelho) para sinalização de vaga livre/ocupada.
+- **Backend**  
+  - Python 3.8+  
+  - Flask & flask-cors para criar API RESTful  
+    - **Endpoints**:  
+      - `POST /vaga` – registrar ocupação de vaga  
+      - `GET /vagas` – consultar status de todas as vagas  
+  - Armazenamento: `vagas.json`
 
--Backend:
-Python 3.8+ com Flask e flask-cors para criar uma API RESTful (POST /vaga, GET /vagas).
-vagas.json como armazenamento simples de estado.
+- **Visão Computacional**  
+  - OpenCV para recorte automático da região de interesse (placa da moto)  
+  - Tesseract OCR (modo `--psm 7`) para reconhecimento de caracteres
 
--Visão Computacional:
-OpenCV (recorte automático de região de interesse) para isolar a placa da moto.
-Tesseract OCR (modo --psm 7) para reconhecer caracteres de placas em imagens capturadas.
+- **Frontend**  
+  - HTML5 & CSS3 para estrutura e estilo  
+  - JavaScript (Fetch API) para comunicação com a API  
+  - Atualização dinâmica do dashboard a cada 2 segundos
 
--Frontend:
-HTML5 e CSS3 para estrutura e estilo do dashboard.
-JavaScript (Fetch API) para interagir com a API e atualizar dinamicamente um grid de vagas a cada 2 s.
+- **Ambiente & Ferramentas**  
+  - Google Colab para prototipagem do notebook de OCR  
+  - VSCode como IDE  
+  - Testes de API: Postman / curl / PowerShell
 
--Ambiente & Ferramentas:
-Google Colab para prototipar e rodar o notebook de OCR.
-VSCode como IDE, Postman/curl/PowerShell para testes de API.
+**Link Tinkercad:** [Visualização e Simulação](https://www.tinkercad.com/things/iyV2wHXrPS4/editel?sharecode=H4G81FURtnBcGJ910LN6aG40tuQJstCI72vHQZuynd8)
 
---Resultados Parciais
-OCR de Placa: leitura correta de placas simuladas (“XHC2F1”) em mais de 95 % dos testes no Colab, com pipeline que abrange detecção de contornos, binarização e ampliação.
+---
 
-Detecção de Ocupação: sensor ultrassônico identifica presença de motos até 50 cm com aproximadamente 98 % de confiabilidade; LEDs indicam o estado da vaga em tempo real.
+## Resultados Parciais
 
-Dashboard Web: interface responsiva em grid, capaz de refletir mudanças enviadas pela API em menos de 2 segundos, exibindo status (“livre”/“ocupada”) e placa associada a cada vaga.
+- **OCR de Placa**  
+  - Leitura correta de placas simuladas (ex.: “XHC2F1”) em >95% dos testes no Colab  
+  - Pipeline: detecção de contornos → binarização → ampliação → OCR
+
+- **Detecção de Ocupação**  
+  - Sensor ultrassônico identifica presença de motos até 50 cm com ≈98% de confiabilidade  
+  - LEDs indicam estado da vaga em tempo real (verde = livre, vermelho = ocupada)
+
+- **Dashboard Web**  
+  - Interface responsiva em grid  
+  - Atualização em <2 s após mudança de estado  
+  - Exibe status e placa associada a cada vaga
+
+---
+
+*Desenvolvido como parte do projeto de Monitoramento Inteligente de Pátios para Mottu.*
