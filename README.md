@@ -55,5 +55,3 @@
   - Exibe status e placa associada a cada vaga
 
 ---
-
-*Desenvolvido como parte do projeto de Monitoramento Inteligente de Pátios para Mottu.*
